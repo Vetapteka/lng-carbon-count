@@ -1,0 +1,124 @@
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+}
+
+.header_btns__body {
+    display: flex;
+    justify-content: end;
+}
+
+.header_menu {
+    position: relative;
+    background-color: var(--color-turquoise-light);
+}
+
+.header_menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    background-color: var(--color-turquoise-light);
+}
+
+.header_menu__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_menu__burger {
+    display: none;
+}
+
+.header_menu__logo {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    z-index: 3;
+}
+
+.header_menu__list ul {
+    position: relative;
+    padding: 0;
+    display: flex;
+    z-index: 3;
+}
+
+.header_menu__list li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.header_menu__link {
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .header_menu__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+    }
+    .header_menu__burger span,
+    .header_menu__burger:after,
+    .header_menu__burger:before {
+        content: '';
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+    .header_menu__burger:before {
+        top: 0;
+    }
+    .header_menu__burger span {
+        top: 9px;
+    }
+    .header_menu__burger:after {
+        bottom: 0;
+    }
+
+    .header_menu__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+    }
+
+    .header_menu__list ul {
+        display: block;
+    }
+
+    .header_menu::before {
+        display: block;
+    }
+
+    .header_menu__list li {
+        margin: 20px 0;
+    }
+}
+
+.header_menu__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.header_menu__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+
+.header_menu__burger.span.active {
+    transform: scale(0);
+}
