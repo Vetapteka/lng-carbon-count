@@ -1,5 +1,26 @@
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     max-width: 1371px;
-    margin: 0px auto;
-    padding: 0 10px;
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+}
+
+main {
+    margin-top: 121px;
+    flex-grow: 1;
+}
+footer {
+    flex-grow: 0;
 }
