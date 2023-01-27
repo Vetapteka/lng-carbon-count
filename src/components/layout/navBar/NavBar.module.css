@@ -1,8 +1,5 @@
-.header {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    z-index: 100;
+header {
+    background-color: white;
 }
 
 .header_btns__body {
@@ -14,17 +11,26 @@
     position: relative;
     background-color: var(--color-turquoise-light);
 }
-
+.header_menu::after,
 .header_menu::before {
-    content: '';
     position: absolute;
+    content: '';
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.header_menu::before {
     z-index: 2;
-    display: none;
     background-color: var(--color-turquoise-light);
+}
+
+.header_menu::after {
+    position: relative;
+    display: block;
+    background-color: white;
+    z-index: 1;
 }
 
 .header_menu__body {
@@ -32,6 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 3;
 }
 
 .header_menu__burger {
@@ -42,14 +49,10 @@
     text-decoration: none;
     text-transform: uppercase;
     color: black;
-    z-index: 3;
 }
 
 .header_menu__list ul {
-    position: relative;
-    padding: 0;
     display: flex;
-    z-index: 3;
 }
 
 .header_menu__list li {
@@ -78,6 +81,7 @@
         width: 100%;
         height: 2px;
         left: 0;
+        transition: all 0.3s ease 0s;
     }
     .header_menu__burger:before {
         top: 0;
@@ -89,24 +93,36 @@
         bottom: 0;
     }
 
+    .header_menu.active::after {
+        height: 100vh;
+        z-index: 2;
+    }
+
     .header_menu__list {
         position: absolute;
         top: 100%;
+        left: -100%;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header_menu__list.active {
         left: 0;
-        z-index: 1;
     }
 
     .header_menu__list ul {
         display: block;
-    }
-
-    .header_menu::before {
-        display: block;
+        padding: 0;
     }
 
     .header_menu__list li {
-        margin: 20px 0;
+        margin-top: 20px;
     }
+
+    .header_menu__logo {
+        font-size: smaller;
+    }
+
+    
 }
 
 .header_menu__burger.active:before {
@@ -119,6 +135,13 @@
     bottom: 9px;
 }
 
-.header_menu__burger.span.active {
+.header_menu__burger.active span {
     transform: scale(0);
+}
+
+.header_btns__body button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
 }

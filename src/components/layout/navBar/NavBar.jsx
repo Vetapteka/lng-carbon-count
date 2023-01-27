@@ -1,48 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-    CALCULATOR_ROUTE,
-    CONTACT_US_ROUTE,
-    HELP_CNTER_ROUTE,
-    METODIC_ROUTE,
-} from '../../../utils/consts';
+import * as consts from '../../../utils/consts';
 import classes from './NavBar.module.css';
+import authIcon from '../../../assets/authIcon.svg';
+import downloadIcon from '../../../assets/downloadIcon.svg';
 
 const NavBar = () => {
+    const [burgerIsActive, setBurgerIsActive] = useState(false);
+    const toggleClass = () => {
+        setBurgerIsActive(!burgerIsActive);
+    };
+    const closeBurger = () => {
+        setBurgerIsActive(false);
+    };
+
+    const getActiveClass = () => {
+        return burgerIsActive ? ' ' + classes.active : '';
+    };
+
     return (
         <header className={classes.header}>
             <div className={classes.header_btns}>
                 <div className='container'>
                     <div className={classes.header_btns__body}>
-                        <button className={classes.auth}>auth</button>
-                        <button className={classes.download}>download</button>
+                        <button>
+                            <img src={downloadIcon} />
+                        </button>
+                        <button>
+                            <img src={authIcon} />
+                        </button>
                     </div>
                 </div>
             </div>
-            <div className={classes.header_menu}>
+            <div className={classes.header_menu + getActiveClass()}>
                 <div className='container'>
                     <div className={classes.header_menu__body}>
                         <Link
                             className={classes.header_menu__logo}
-                            to={CALCULATOR_ROUTE}
+                            to={consts.CALCULATOR_ROUTE}
                         >
                             <h1>lng carbon count</h1>
                         </Link>
                         <div
-                            className={classes.header_menu__burger}
-                            onClick={(event) => {
-                                console.log(event);
-                                // event.target.toggleClass(classes.active);
-                            }}
+                            className={
+                                classes.header_menu__burger + getActiveClass()
+                            }
+                            onClick={toggleClass}
                         >
                             <span></span>
                         </div>
-                        <nav className={classes.header_menu__list}>
-                            <ul>
+                        <nav
+                            className={
+                                classes.header_menu__list + getActiveClass()
+                            }
+                        >
+                            <ul onClick={closeBurger}>
                                 <li>
                                     <Link
                                         className={classes.header_menu__link}
-                                        to={METODIC_ROUTE}
+                                        to={consts.METODIC_ROUTE}
                                     >
                                         About LNG CC
                                     </Link>
@@ -50,7 +66,7 @@ const NavBar = () => {
                                 <li>
                                     <Link
                                         className={classes.header_menu__link}
-                                        to={HELP_CNTER_ROUTE}
+                                        to={consts.HELP_CNTER_ROUTE}
                                     >
                                         Help center
                                     </Link>
@@ -58,7 +74,7 @@ const NavBar = () => {
                                 <li>
                                     <Link
                                         className={classes.header_menu__link}
-                                        to={CONTACT_US_ROUTE}
+                                        to={consts.CONTACT_US_ROUTE}
                                     >
                                         Contact us
                                     </Link>
