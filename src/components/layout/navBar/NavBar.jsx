@@ -6,16 +6,13 @@ import authIcon from '../../../assets/authIcon.svg';
 import downloadIcon from '../../../assets/downloadIcon.svg';
 
 const NavBar = () => {
-    const [burgerIsActive, setBurgerIsActive] = useState(false);
-    const toggleClass = () => {
-        setBurgerIsActive(!burgerIsActive);
+    const [classActive, setClassActive] = useState('');
+
+    const toggleClassActive = () => {
+        setClassActive(classActive ? '' : classes.active);
     };
     const closeBurger = () => {
-        setBurgerIsActive(false);
-    };
-
-    const getActiveClass = () => {
-        return burgerIsActive ? ' ' + classes.active : '';
+        setClassActive('');
     };
 
     return (
@@ -32,7 +29,7 @@ const NavBar = () => {
                     </div>
                 </div>
             </div>
-            <div className={classes.header_menu + getActiveClass()}>
+            <div className={classes.header_menu + classActive}>
                 <div className='container'>
                     <div className={classes.header_menu__body}>
                         <Link
@@ -43,16 +40,14 @@ const NavBar = () => {
                         </Link>
                         <div
                             className={
-                                classes.header_menu__burger + getActiveClass()
+                                classes.header_menu__burger + classActive
                             }
-                            onClick={toggleClass}
+                            onClick={toggleClassActive}
                         >
                             <span></span>
                         </div>
                         <nav
-                            className={
-                                classes.header_menu__list + getActiveClass()
-                            }
+                            className={classes.header_menu__list + classActive}
                         >
                             <ul onClick={closeBurger}>
                                 <li>
