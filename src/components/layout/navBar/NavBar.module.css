@@ -64,6 +64,13 @@ header {
     color: black;
 }
 
+.header_btns__body button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
 @media (max-width: 767px) {
     .header_menu__burger {
         display: block;
@@ -122,26 +129,17 @@ header {
         font-size: smaller;
     }
 
-    
-}
+    .header_menu__burger.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
 
-.header_menu__burger.active:before {
-    transform: rotate(45deg);
-    top: 9px;
-}
+    .header_menu__burger.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
 
-.header_menu__burger.active:after {
-    transform: rotate(-45deg);
-    bottom: 9px;
-}
-
-.header_menu__burger.active span {
-    transform: scale(0);
-}
-
-.header_btns__body button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin-left: 10px;
+    .header_menu__burger.active span {
+        transform: scale(0);
+    }
 }

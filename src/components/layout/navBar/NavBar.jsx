@@ -4,6 +4,7 @@ import * as consts from '../../../utils/consts';
 import classes from './NavBar.module.css';
 import authIcon from '../../../assets/authIcon.svg';
 import downloadIcon from '../../../assets/downloadIcon.svg';
+import Container from '../../common/Container/Container';
 
 const NavBar = () => {
     const [classActive, setClassActive] = useState('');
@@ -18,7 +19,7 @@ const NavBar = () => {
     return (
         <header className={classes.header}>
             <div className={classes.header_btns}>
-                <div className='container'>
+                <Container>
                     <div className={classes.header_btns__body}>
                         <button>
                             <img src={downloadIcon} />
@@ -27,10 +28,10 @@ const NavBar = () => {
                             <img src={authIcon} />
                         </button>
                     </div>
-                </div>
+                </Container>
             </div>
             <div className={classes.header_menu + classActive}>
-                <div className='container'>
+                <Container>
                     <div className={classes.header_menu__body}>
                         <Link
                             className={classes.header_menu__logo}
@@ -77,7 +78,7 @@ const NavBar = () => {
                             </ul>
                         </nav>
                     </div>
-                </div>
+                </Container>
             </div>
         </header>
     );
