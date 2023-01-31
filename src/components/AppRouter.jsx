@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import * as routes from '../utils/consts';
 
 import ContactUs from '../pages/ContactUs';
-import Calculator from '../pages/Calculator';
+import Calculator from '../pages/calculator/Calculator';
 import Metodic from '../pages/Metodic';
 import HelpCenter from '../pages/HelpCenter';
 import Layout from './layout/Layout/Layout';

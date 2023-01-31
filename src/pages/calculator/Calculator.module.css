@@ -1,0 +1,25 @@
+.body {
+    display: grid;
+    grid-template: 1fr 3em 1.5fr 2fr 3fr / repeat(5, 1fr);
+    grid-template-areas:
+        'form form form form button'
+        '. . .  extra_btn .';
+}
+
+.main_form {
+    grid-area: form;
+}
+
+.main_form__button {
+    grid-area: button;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_form__button_extra {
+    grid-area: extra_btn;
+    display: flex;
+    justify-content: flex-end;    
+}
