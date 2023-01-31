@@ -1,0 +1,35 @@
+.label {
+    font-size: smaller;
+}
+
+.input,
+.select,
+.button {
+    width: 80%;
+    height: 3em;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    font: inherit;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.button.base {
+    background-color: var(--color-grey-dark);
+    text-transform: uppercase;
+}
+
+.button.main {
+    background-color: var(--color-blue-light);
+    text-transform: uppercase;
+    color: white;
+}
+
+.button.extra {
+    background: none;
+    font-size: smaller;
+}
