@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lng-carbon-count/static/css/main.47238cf8.css",
-    "main.js": "/lng-carbon-count/static/js/main.7f5111c0.js",
+    "main.js": "/lng-carbon-count/static/js/main.82d6acc0.js",
     "static/media/authIcon.svg": "/lng-carbon-count/static/media/authIcon.ccfe68052b2b27a1ea6d61742b134d10.svg",
     "static/media/downloadIcon.svg": "/lng-carbon-count/static/media/downloadIcon.6770253d8efe76a4bf676838984a9deb.svg",
     "index.html": "/lng-carbon-count/index.html",
     "main.47238cf8.css.map": "/lng-carbon-count/static/css/main.47238cf8.css.map",
-    "main.7f5111c0.js.map": "/lng-carbon-count/static/js/main.7f5111c0.js.map"
+    "main.82d6acc0.js.map": "/lng-carbon-count/static/js/main.82d6acc0.js.map"
   },
   "entrypoints": [
     "static/css/main.47238cf8.css",
-    "static/js/main.7f5111c0.js"
+    "static/js/main.82d6acc0.js"
   ]
 }
