@@ -4,25 +4,17 @@ import { buttonRoles } from '../../components/common/UI/Button/ButtonRoles';
 import Form from '../../components/common/UI/Form/Form';
 import { Size } from '../../components/common/UI/utils';
 import { mainParams } from '../../utils/lng-variables';
-import classes from './Calculator.module.css';
+import CalculatorLayout from './CalculatorLayout';
 
 const Calculator = () => {
     return (
-        <div className={classes.body}>
-            <div className={classes.main_form}>
-                <Form
-                    className={classes.main_form}
-                    size={new Size(4, 2)}
-                    fields={mainParams}
-                />
-            </div>
-            <div className={classes.main_form__button}>
-                <Button role={buttonRoles.main}>Calculate</Button>
-            </div>
-            <div className={classes.main_form__button_extra}>
+        <CalculatorLayout
+            mainForm={<Form size={new Size(4, 2)} fields={mainParams} />}
+            mainFormButton={<Button role={buttonRoles.main}>Calculate</Button>}
+            mainFormExtraBtn={
                 <Button role={buttonRoles.extra}>more options</Button>
-            </div>
-        </div>
+            }
+        />
     );
 };
 
