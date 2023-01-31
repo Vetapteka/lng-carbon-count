@@ -1,6 +1,16 @@
+import { fetchPorts } from '../API/portsAPI';
+
 export const mainParams = [
-    { label: 'To', tag: 'select' },
-    { label: 'From', tag: 'select' },
+    {
+        label: 'To',
+        tag: 'select',
+        getOptionsData: fetchPorts,
+    },
+    {
+        label: 'From',
+        tag: 'select',
+        getOptionsData: fetchPorts,
+    },
     {
         label: 'Route',
         tag: 'input',

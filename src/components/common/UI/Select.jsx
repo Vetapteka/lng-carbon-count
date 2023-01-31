@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './ui.module.css';
 
-const Select = (props) => {
+const Select = ({ label, getOptionsData }) => {
+    const [optionsData, setOptionsData] = useState([]);
+
+    useEffect(() => {
+        getOptionsData().then((data) => setOptionsData(data));
+    }, []);
+
     return (
         <label className={classes.label}>
-            {props.label} <br />
-            <select className={classes.select}></select>
+            {label} <br />
+            <select className={classes.select}>
+                {optionsData.map((data) => (
+                    <option key={data.name}>
+                        {data.name}, {data.country}
+                    </option>
+                ))}
+            </select>
         </label>
     );
 };
