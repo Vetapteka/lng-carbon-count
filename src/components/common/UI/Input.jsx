@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './ui.module.css';
 
 const Input = (props) => {
-    console.log(props);
     return (
         <label className={classes.label}>
             {props.label} <br />

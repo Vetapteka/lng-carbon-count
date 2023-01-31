@@ -14,7 +14,7 @@
     font: inherit;
 }
 
-.button{
+.button {
     cursor: pointer;
 }
 
@@ -30,6 +30,8 @@
 }
 
 .button.extra {
-    background: none;
+    width: auto;
+    height: 2em;
+    padding: 5px 10px;
     font-size: smaller;
 }

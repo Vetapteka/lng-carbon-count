@@ -10,7 +10,7 @@ const NavBar = () => {
     const [classActive, setClassActive] = useState('');
 
     const toggleClassActive = () => {
-        setClassActive(classActive ? '' : classes.active);
+        setClassActive(classActive ? '' : ' ' + classes.active);
     };
     const closeBurger = () => {
         setClassActive('');
