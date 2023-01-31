@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Aliaga",
+        "country": "Turkey"
+    },
+    {
+        "name": "Bahia FSRU",
+        "country": "Brazil"
+    },
+    {
+        "name": "Port Qasim",
+        "country": "Pakistan"
+    },
+    {
+        "name": "Dahej",
+        "country": "India"
+    },
+    {
+        "name": "Kochi",
+        "country": "India"
+    },
+    {
+        "name": "Ennore",
+        "country": "India"
+    },
+    {
+        "name": "Moheskali FSRU",
+        "country": "Bangladesh"
+    },
+
+    {
+        "name": "Hai Lihn",
+        "country": "Vietnam"
+    },
+    {
+        "name": "Map Ta Phut ",
+        "country": "Thailand"
+    },
+    {
+        "name": "Dapeng",
+        "country": "China"
+    },
+    {
+        "name": "Yuedong",
+        "country": "China"
+    },
+    {
+        "name": "Yung An",
+        "country": "Taiwan"
+    },
+    {
+        "name": "Shanghai",
+        "country": "China"
+    },
+    {
+        "name": "Tongyeong",
+        "country": "South Korea"
+    },
+    {
+        "name": "Oita",
+        "country": "Japan"
+    },
+    {
+        "name": "Inchon",
+        "country": "South Korea"
+    },
+    {
+        "name": "Tianjin",
+        "country": "China"
+    }
+]
