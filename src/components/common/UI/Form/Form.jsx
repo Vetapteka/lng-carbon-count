@@ -3,13 +3,13 @@ import Input from '../Input';
 import Select from '../Select';
 import classes from './Form.module.css';
 
-const Form = ({ fields, size, children }) => {
+const Form = ({ fields, size, children, ...props }) => {
     const style = {
         gridTemplate: getTemplate(size),
     };
 
     return (
-        <form style={style} className={classes.form}>
+        <form style={style} className={classes.form} {...props}>
             {!children
                 ? fields.map((field) => getUIComponent(field))
                 : children}

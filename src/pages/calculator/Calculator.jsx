@@ -7,13 +7,24 @@ import { mainParams } from '../../utils/lng-variables';
 import CalculatorLayout from './CalculatorLayout';
 
 const Calculator = () => {
+    const mainForm = (
+        <Form id='mainForm' size={new Size(4, 2)} fields={mainParams} />
+    );
+    const mainFormButton = (
+        <Button role={buttonRoles.main} type='submit' form='mainForm'>
+            Calculate
+        </Button>
+    );
+    const moreOptionButton = (
+        <Button role={buttonRoles.extra}>more options
+        </Button>
+    );
+
     return (
         <CalculatorLayout
-            mainForm={<Form size={new Size(4, 2)} fields={mainParams} />}
-            mainFormButton={<Button role={buttonRoles.main}>Calculate</Button>}
-            mainFormExtraBtn={
-                <Button role={buttonRoles.extra}>more options</Button>
-            }
+            mainForm={mainForm}
+            mainFormButton={mainFormButton}
+            moreOptionButton={moreOptionButton}
         />
     );
 };
