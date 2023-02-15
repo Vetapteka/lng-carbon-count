@@ -3,7 +3,7 @@ import Form from '../../components/common/UI/Form/Form';
 
 const MoreOptions = () => {
     return (
-        <Form></Form>
+        <></>
     );
 };
 

@@ -8,6 +8,7 @@ import Calculator from '../pages/calculator/Calculator';
 import Metodic from '../pages/Metodic';
 import HelpCenter from '../pages/HelpCenter';
 import Layout from './layout/Layout/Layout';
+import MoreOptions from '../pages/calculator/MoreOptions';
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: routes.CONTACT_US_ROUTE,
                 element: <ContactUs />,
+            },
+            {
+                path: routes.MORE_OPTIONS_ROUTE,
+                element: <MoreOptions />,
             },
         ],
     },
