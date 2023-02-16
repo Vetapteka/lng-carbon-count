@@ -2,12 +2,13 @@ import { fetchPorts } from '../API/portsAPI';
 
 export const mainParams = [
     {
-        label: 'To',
+        label: 'From',
         tag: 'select',
         getOptionsData: fetchPorts,
+
     },
     {
-        label: 'From',
+        label: 'To',
         tag: 'select',
         getOptionsData: fetchPorts,
     },
@@ -16,8 +17,8 @@ export const mainParams = [
         tag: 'inputRadio',
         type: 'radio',
         chouses: [
-            { label: 'Suez', value: 'suez' },
             { label: 'NSR', value: 'nsr' },
+            { label: 'Suez', value: 'suez' },
         ],
     },
     { label: 'Distance', unit: 'Nmi', tag: 'input', type: 'text' },

@@ -1,6 +1,11 @@
-.input_radio__body {
+.input_item {
     display: flex;
-    flex-direction: column;
+    align-items: end;
+}
+.input_item > span {
+    display: inline-block;
+    font-size: small;
+    padding-left: 3px;
 }
 
 .input_radio__container {
@@ -20,6 +25,7 @@
 .input_radio__container label {
     display: table-cell;
     text-align: center;
+    background-color: aqua;
     vertical-align: middle;
     border-right: 2px solid var(--color-grey-light);
 }
@@ -33,6 +39,6 @@
     border-right: none;
 }
 
-.input_radio__container input[type='radio']:checked + label {
+.input_radio__container > div:has(input[type='radio']:checked) label {
     background: var(--color-orange-light);
 }

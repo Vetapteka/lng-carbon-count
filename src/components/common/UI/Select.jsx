@@ -9,7 +9,8 @@ const Select = ({ label, getOptionsData }) => {
     }, []);
 
     return (
-        <div className='input_item'>
+        <div className='input_item__container'>
+            <label for={label}>{label}</label>
             <select id={label}>
                 {optionsData.map((data) => (
                     <option key={data.name}>
@@ -17,7 +18,6 @@ const Select = ({ label, getOptionsData }) => {
                     </option>
                 ))}
             </select>
-            <label for={label}>{label}</label>
         </div>
     );
 };

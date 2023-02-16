@@ -5,11 +5,11 @@ import '../ui.css';
 
 const InputRadio = ({ label, chouses }) => {
     return (
-        <div className={classes.input_radio__body}>
+        <div className='input_item__container'>
             <label>{label}</label>
             <div className={classes.input_radio__container}>
                 {chouses.map((chouse, index) => (
-                    <Input key={index} type='radio' name={label} {...chouse} />
+                    <Input checked key={index} type='radio' name={label} {...chouse} />
                 ))}
             </div>
         </div>
