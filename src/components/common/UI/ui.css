@@ -1,6 +1,11 @@
 label {
     font-size: smaller;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+.input_item {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 input[type='text'],

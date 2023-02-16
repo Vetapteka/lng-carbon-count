@@ -1,8 +1,3 @@
-.input_item {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
 .input_radio__body {
     display: flex;
     flex-direction: column;
@@ -17,7 +12,7 @@
     display: none;
 }
 
-.input_radio__container > .input_item {
+.input_radio__container > div {
     flex-grow: 1;
     display: table;
 }
@@ -29,11 +24,11 @@
     border-right: 2px solid var(--color-grey-light);
 }
 
-.input_radio__container .input_item:first-child label {
+.input_radio__container div:first-child label {
     border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
-.input_radio__container .input_item:last-child label {
+.input_radio__container div:last-child label {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     border-right: none;
 }
