@@ -5,6 +5,11 @@ header {
 .header_btns__body {
     display: flex;
     justify-content: end;
+    align-items: center;
+}
+
+.header_btns__body > * {
+    margin-left: 20px;
 }
 
 .header_menu {
@@ -62,13 +67,6 @@ header {
 
 .header_menu__link {
     color: black;
-}
-
-.header_btns__body button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin-left: 10px;
 }
 
 @media (max-width: 767px) {

@@ -5,6 +5,8 @@ import classes from './NavBar.module.css';
 import authIcon from '../../../assets/authIcon.svg';
 import downloadIcon from '../../../assets/downloadIcon.svg';
 import Container from '../../common/Container/Container';
+import Button from '../../common/UI/Button/Button';
+import { buttonRoles } from '../../common/UI/Button/ButtonRoles';
 
 const NavBar = () => {
     const [classActive, setClassActive] = useState('');
@@ -21,12 +23,12 @@ const NavBar = () => {
             <div className={classes.header_btns}>
                 <Container>
                     <div className={classes.header_btns__body}>
-                        <button>
+                        <Button role={buttonRoles.img}>
                             <img src={downloadIcon} />
-                        </button>
-                        <button>
+                        </Button>
+                        <Button role={buttonRoles.img}>
                             <img src={authIcon} />
-                        </button>
+                        </Button>
                     </div>
                 </Container>
             </div>
