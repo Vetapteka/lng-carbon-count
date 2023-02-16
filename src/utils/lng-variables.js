@@ -13,9 +13,9 @@ export const mainParams = [
     },
     {
         label: 'Route',
-        tag: 'input',
+        tag: 'inputRadio',
         type: 'radio',
-        chouse: [
+        chouses: [
             { label: 'Suez', value: 'suez' },
             { label: 'NSR', value: 'nsr' },
         ],
@@ -25,9 +25,9 @@ export const mainParams = [
 
     {
         label: 'Engion type',
-        tag: 'input',
+        tag: 'inputRadio',
         type: 'radio',
-        chouse: [
+        chouses: [
             { label: 'Diesel', value: 'diesel' },
             { label: 'DFDE', value: 'dfde' },
         ],
