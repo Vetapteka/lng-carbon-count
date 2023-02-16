@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classes from './ui.module.css';
+import './ui.css';
 
 const Select = ({ label, getOptionsData }) => {
     const [optionsData, setOptionsData] = useState([]);
@@ -9,9 +9,9 @@ const Select = ({ label, getOptionsData }) => {
     }, []);
 
     return (
-        <label className={classes.label}>
-            {label} <br />
-            <select className={classes.select}>
+        <label>
+            {label}
+            <select>
                 {optionsData.map((data) => (
                     <option key={data.name}>
                         {data.name}, {data.country}

@@ -1,4 +1,4 @@
-import classes from '../ui.module.css';
+import classes from './Button.module.css';
 
 export const buttonRoles = {
     main: classes.main,

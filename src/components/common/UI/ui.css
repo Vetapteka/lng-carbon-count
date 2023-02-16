@@ -1,0 +1,16 @@
+label {
+    font-size: smaller;
+}
+
+input[type='text'],
+select,
+button {
+    display: block;
+    width: 80%;
+    height: 3em;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    font: inherit;
+}

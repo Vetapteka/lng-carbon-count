@@ -1,5 +1,6 @@
 import React from 'react';
-import classes from '../ui.module.css';
+import classes from './Button.module.css';
+import '../ui.css';
 
 const Button = (props) => {
     return (

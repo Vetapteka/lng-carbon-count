@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import * as routes from '../utils/consts';
 
 import ContactUs from '../pages/ContactUs';
-import Calculator from '../pages/calculator/Calculator';
+import Calculator from '../pages/calculator/mainCalculator/Calculator';
 import Metodic from '../pages/Metodic';
 import HelpCenter from '../pages/HelpCenter';
 import Layout from './layout/Layout/Layout';
-import MoreOptions from '../pages/calculator/MoreOptions';
+import MoreOptions from '../pages/calculator/moreOptions/MoreOptions';
 
 const router = createBrowserRouter([
     {

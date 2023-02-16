@@ -1,0 +1,18 @@
+.input_radio__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_radio__container {
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input_radio__container > label {
+    display: flex;
+    align-items: center;
+}
+.input_radio__container input {
+    display: block;
+}
