@@ -3,9 +3,11 @@
     align-items: end;
 }
 .input_item > span {
+    width: 20%;
     display: inline-block;
     font-size: small;
     padding-left: 3px;
+    overflow: hidden;
 }
 
 .input_radio__container {
