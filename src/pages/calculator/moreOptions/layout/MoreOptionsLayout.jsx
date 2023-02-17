@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../../../components/common/Section';
+import Section from '../../../../components/common/Section';
 import classes from './MoreOptionsLayout.module.css';
 
 const MoreOptionsLayout = ({
