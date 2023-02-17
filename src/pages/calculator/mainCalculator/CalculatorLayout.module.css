@@ -12,14 +12,12 @@
 
 .main_form__button {
     grid-area: button;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
 }
 
 .main_form__button_extra {
     grid-area: extra_btn;
-    display: flex;
-    justify-content: end;
+    justify-self: end;
 }

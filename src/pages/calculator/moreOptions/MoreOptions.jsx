@@ -9,6 +9,8 @@ import {
     calculationParams,
     emissionIntensityParams,
 } from '../../../utils/lng-variables';
+import { Link } from 'react-router-dom';
+import { CALCULATOR_ROUTE } from '../../../utils/consts';
 
 const MoreOptions = () => {
     const generalForm = (
@@ -24,9 +26,14 @@ const MoreOptions = () => {
     const parametersForm = (
         <Form id='form' size={new Size(1, 4)} fields={calculationParams} />
     );
-    const button = (
+    const buttonSubmit = (
         <Button role={buttonRoles.main} type='submit' form='form'>
             save
+        </Button>
+    );
+    const buttonTurnBack = (
+        <Button role={buttonRoles.base}>
+            <Link to={CALCULATOR_ROUTE}>turn back</Link>
         </Button>
     );
     return (
@@ -34,7 +41,8 @@ const MoreOptions = () => {
             generalForm={generalForm}
             emissionForm={emissionForm}
             parametersForm={parametersForm}
-            button={button}
+            buttonSubmit={buttonSubmit}
+            buttonTurnBack={buttonTurnBack}
         />
     );
 };

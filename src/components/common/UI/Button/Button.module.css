@@ -3,10 +3,18 @@
     width: 100%;
 }
 
+.button > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .button.base {
     background-color: var(--color-grey-dark);
     text-transform: uppercase;
-    height: fit-content;
+    color: white;
 }
 
 .button.main {
@@ -20,6 +28,10 @@
     height: 2em;
     padding: 5px 10px;
     font-size: smaller;
+}
+
+.button.extra:hover {
+    color: var(--color-blue-dark);
 }
 
 .button.img {

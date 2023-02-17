@@ -6,7 +6,8 @@ const MoreOptionsLayout = ({
     generalForm,
     emissionForm,
     parametersForm,
-    button,
+    buttonSubmit,
+    buttonTurnBack,
 }) => {
     return (
         <div className={classes.body}>
@@ -15,7 +16,10 @@ const MoreOptionsLayout = ({
             <Section title='parameters for calculation'>
                 {parametersForm}
             </Section>
-            <div className={classes.button_grid}>{button}</div>
+            <div className={classes.button_grid}>
+                {buttonTurnBack}
+                {buttonSubmit}
+            </div>
         </div>
     );
 };

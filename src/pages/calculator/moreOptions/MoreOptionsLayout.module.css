@@ -6,6 +6,6 @@
 
 .button_grid {
     grid-column-start: 3;
-    width: 50%;
-    justify-self: end;
+    display: flex;
+    gap: 10px;
 }
