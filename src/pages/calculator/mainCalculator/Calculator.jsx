@@ -5,12 +5,16 @@ import { buttonRoles } from '../../../components/common/UI/Button/ButtonRoles';
 import Form from '../../../components/common/UI/Form/Form';
 import { Size } from '../../../components/common/UI/utils';
 import { MORE_OPTIONS_ROUTE } from '../../../utils/consts';
-import { mainParams } from '../../../utils/lng-variables';
-import CalculatorLayout from './CalculatorLayout';
+import CalculatorLayout from './layout/CalculatorLayout';
+import { MainParamsManager } from './MainParamsManager';
 
 const Calculator = () => {
     const mainForm = (
-        <Form id='mainForm' size={new Size(4, 2)} fields={mainParams} />
+        <Form
+            id='mainForm'
+            size={new Size(4, 2)}
+            formManager={MainParamsManager}
+        />
     );
     const mainFormButton = (
         <Button role={buttonRoles.main} type='submit' form='mainForm'>

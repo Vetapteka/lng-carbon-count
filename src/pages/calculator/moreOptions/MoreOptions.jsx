@@ -1,30 +1,36 @@
 import React from 'react';
-import MoreOptionsLayout from './MoreOptionsLayout';
+import MoreOptionsLayout from './layout/MoreOptionsLayout';
 import Button from '../../../components/common/UI/Button/Button';
 import { buttonRoles } from '../../../components/common/UI/Button/ButtonRoles';
 import Form from '../../../components/common/UI/Form/Form';
 import { Size } from '../../../components/common/UI/utils';
-import {
-    generalParams,
-    calculationParams,
-    emissionIntensityParams,
-} from '../../../utils/lng-variables';
 import { Link } from 'react-router-dom';
 import { CALCULATOR_ROUTE } from '../../../utils/consts';
+import { GeneralParamsManager } from './formManagers/GeneralParamsManager';
+import { EmissionParamsManager } from './formManagers/EmissionParamsManager';
+import { CalculationParamsManager } from './formManagers/CalculationParamsManager';
 
 const MoreOptions = () => {
     const generalForm = (
-        <Form id='form' size={new Size(1, 4)} fields={generalParams} />
+        <Form
+            id='form'
+            size={new Size(1, 4)}
+            formManager={GeneralParamsManager}
+        />
     );
     const emissionForm = (
         <Form
             id='form'
             size={new Size(1, 7)}
-            fields={emissionIntensityParams}
+            formManager={EmissionParamsManager}
         />
     );
     const parametersForm = (
-        <Form id='form' size={new Size(1, 4)} fields={calculationParams} />
+        <Form
+            id='form'
+            size={new Size(1, 4)}
+            formManager={CalculationParamsManager}
+        />
     );
     const buttonSubmit = (
         <Button role={buttonRoles.main} type='submit' form='form'>
