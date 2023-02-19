@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { fetchDistance, fetchPorts } from '../../../API/portsAPI';
+import { fetchDistance, fetchEmission, fetchPorts } from '../../../API/portsAPI';
 import Form from '../../../components/common/UI/Form/Form';
 import Input from '../../../components/common/UI/Input/Input';
 import InputRadio from '../../../components/common/UI/Input/InputRadio';
@@ -23,6 +23,8 @@ const CalculatorForm = (props) => {
     const portFrom = useRef(null);
     const distance = useRef(null);
     const route = useRef(null);
+    const engionType = useRef(null);
+    const emission = useRef(null);
 
     const updateDistance = () => {
         const portToValue = portTo.current.value;
@@ -31,6 +33,14 @@ const CalculatorForm = (props) => {
 
         fetchDistance(portFromValue, portToValue, routeValue).then(
             (data) => (distance.current.value = data)
+        );
+    };
+
+    const updateEmission = () => {
+        const engineTypeValue = engionType.current.dataset.value;
+
+        fetchEmission(engineTypeValue).then(
+            (data) => (emission.current.value = data)
         );
     };
 
@@ -46,16 +56,9 @@ const CalculatorForm = (props) => {
             setPortsFromOptions(portsFromOptios);
 
             updateDistance();
+            updateEmission();
         });
     }, []);
-
-    const handlePortChange = (event) => {
-        updateDistance();
-    };
-
-    const handleRouteChange = (event) => {
-        updateDistance();
-    };
 
     const handlerSubmit = (event) => {
         event.preventDefault();
@@ -67,20 +70,20 @@ const CalculatorForm = (props) => {
                 selectRef={portFrom}
                 label='From'
                 options={portsFromOptions}
-                onChange={handlePortChange}
+                onChange={updateDistance}
             />
             <Select
                 selectRef={portTo}
                 label='To'
                 options={portsToOptions}
-                onChange={handlePortChange}
+                onChange={updateDistance}
             />
             <InputRadio
                 inputRadioRef={route}
                 label='Route'
                 chouses={routeChouses}
                 indexDefaultChecked='1'
-                onChange={handleRouteChange}
+                onChange={updateDistance}
             />
             <Input
                 inputRef={distance}
@@ -90,11 +93,17 @@ const CalculatorForm = (props) => {
             />
             <Input label='Volume' unit='m3 LNG' />
             <InputRadio
+                inputRadioRef={engionType}
                 label='Engion type'
                 chouses={engionChouses}
                 indexDefaultChecked='0'
+                onChange={updateEmission}
             />
-            <Input label='Emission intensity' unit='t CO2-e/Nmi' />
+            <Input
+                inputRef={emission}
+                label='Emission intensity'
+                unit='t CO2-e/Nmi'
+            />
         </Form>
     );
 };

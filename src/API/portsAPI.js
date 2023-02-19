@@ -25,3 +25,9 @@ export const fetchDistance = async (portFrom, portTo, route) => {
     const { data } = await $host.get('./data_example/distances.json');
     return Math.round(+data.value * Math.random() * 1000);
 };
+
+export const fetchEmission = async (engionType) => {
+    // const url = `some_url?engionType=${engionType}`;
+    const { data } = await $host.get('./data_example/emission.json');
+    return Math.round(+data.value * Math.random());
+};
