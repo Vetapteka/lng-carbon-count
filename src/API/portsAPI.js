@@ -19,3 +19,9 @@ export const fetchGeneralParams = async () => {
     const { data } = await $host.get('./data_example/general_params.json');
     return data;
 };
+
+export const fetchDistance = async (portFrom, portTo, route) => {
+    // const url = `some_url?portFrom=${portFrom}&portTo=${portTo}&route=${route}`;
+    const { data } = await $host.get('./data_example/distances.json');
+    return Math.round(+data.value * Math.random() * 1000);
+};
