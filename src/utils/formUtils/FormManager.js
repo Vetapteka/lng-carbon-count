@@ -1,15 +1,7 @@
 export class FormManager {
-    constructor(items, valuesSetter) {
+    constructor(items, defaultValues, fetchValues) {
         this.items = items;
-        this.valuesSetter = valuesSetter;
-    }
-
-    async fillItems() {
-        await this.valuesSetter().then((values) => {
-            values.forEach((value, index) => {
-                this.items[index].setValue(value);
-            });
-        });
-        return this.items;
+        this.fetchValues = fetchValues;
+        this.defaultValues = defaultValues;
     }
 }

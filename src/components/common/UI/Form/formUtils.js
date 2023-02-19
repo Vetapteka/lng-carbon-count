@@ -10,11 +10,14 @@ export const getTemplate = (size) => {
     return `repeat(${size.rowCount}, 1fr)/repeat(${size.columnCount}, 1fr)`;
 };
 
-export const getUIComponent = (item) => {
+export const createUIComponent = ({ item, value, onChange }) => {
     if (item instanceof InputItem)
-        return <Input {...item} key={item.label} />;
-    if (item instanceof SelectItem)
-        return <Select {...item} key={item.label} />;
-    if (item instanceof InputRadioItem)
-        return <InputRadio {...item} key={item.label} />;
+        return (
+            <Input
+                {...item}
+                value={value}
+                onChange={onChange}
+                key={item.label}
+            />
+        );
 };
