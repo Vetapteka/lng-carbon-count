@@ -2,7 +2,7 @@ import React from 'react';
 import MoreOptionsLayout from './layout/MoreOptionsLayout';
 import Button from '../../../components/common/UI/Button/Button';
 import { buttonRoles } from '../../../components/common/UI/Button/ButtonRoles';
-import Form from '../../../components/common/UI/Form/Form';
+import ControlledForm from '../../../components/common/UI/Form/ControlledForm';
 import { Size } from '../../../components/common/UI/utils';
 import { Link } from 'react-router-dom';
 import { CALCULATOR_ROUTE } from '../../../utils/consts';
@@ -12,21 +12,21 @@ import { CalculationParamsManager } from './formManagers/CalculationParamsManage
 
 const MoreOptions = () => {
     const generalForm = (
-        <Form
+        <ControlledForm
             id='form'
             size={new Size(1, 4)}
             formManager={GeneralParamsManager}
         />
     );
     const emissionForm = (
-        <Form
+        <ControlledForm
             id='form'
             size={new Size(1, 7)}
             formManager={EmissionParamsManager}
         />
     );
     const parametersForm = (
-        <Form
+        <ControlledForm
             id='form'
             size={new Size(1, 4)}
             formManager={CalculationParamsManager}

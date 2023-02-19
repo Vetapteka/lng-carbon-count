@@ -12,9 +12,15 @@ const items = [
     new InputItem('Electricity emission factor', 't CO2-e/kWh'),
 ];
 
-const valuesSetter = async () => {
+const fetchValues = async () => {
     let values = await fetchEmissionParams();
     return values.map((obj) => obj.value);
 };
 
-export const EmissionParamsManager = new FormManager(items, valuesSetter);
+const defaultValues = [0, 0, 0, 0, 0, 0, 0];
+
+export const EmissionParamsManager = new FormManager(
+    items,
+    defaultValues,
+    fetchValues
+);

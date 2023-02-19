@@ -9,9 +9,15 @@ const items = [
     new InputItem('Gas pipeline length', 'km'),
 ];
 
-const valueSetter = async () => {
+const fetchValues = async () => {
     let values = await fetchGeneralParams();
     return values.map((obj) => obj.value);
 };
 
-export const GeneralParamsManager = new FormManager(items, valueSetter);
+const defaultValues = [0, 0, 0, 0];
+
+export const GeneralParamsManager = new FormManager(
+    items,
+    defaultValues,
+    fetchValues
+);

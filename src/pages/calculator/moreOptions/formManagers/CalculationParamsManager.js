@@ -9,9 +9,15 @@ const items = [
     new InputItem('t LNG to thousand m3 of gas', 'thousand m3/t LNG'),
 ];
 
-const valuesSetter = async () => {
+const fetchValues = async () => {
     let values = await fetchCalculationParams();
     return values.map((obj) => obj.value);
 };
 
-export const CalculationParamsManager = new FormManager(items, valuesSetter);
+const defaultValues = [0, 0, 0, 0];
+
+export const CalculationParamsManager = new FormManager(
+    items,
+    defaultValues,
+    fetchValues,
+);
