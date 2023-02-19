@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classes from './Form.module.css';
-import { getTemplate, getUIComponent } from './formUtils';
+import { getTemplate} from './formUtils';
 
-const Form = ({ formManager, size, children, ...props }) => {
-    const [items, setItems] = useState(formManager.items);
-
-    useEffect(() => {
-        formManager.fillItems().then((data) => {
-            setItems([...data]);
-        });
-    }, []);
-
+const Form = ({ size, children, ...props }) => {
     const style = {
         gridTemplate: getTemplate(size),
     };
 
     return (
         <form style={style} className={classes.form} {...props}>
-            {!children ? items.map((item) => getUIComponent(item)) : children}
+            {children}
         </form>
     );
 };
