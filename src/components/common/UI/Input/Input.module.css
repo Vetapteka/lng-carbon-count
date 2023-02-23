@@ -27,7 +27,6 @@
 .input_radio__container label {
     display: table-cell;
     text-align: center;
-    background-color: aqua;
     vertical-align: middle;
     border-right: 2px solid var(--color-grey-light);
 }
@@ -41,6 +40,7 @@
     border-right: none;
 }
 
-.input_radio__container > div:has(input[type='radio']:checked) label {
-    background: var(--color-orange-light);
+/* '!important' because ui.css interrupts modules (this file)*/
+.checked {
+    background: var(--color-orange-light) !important;
 }
