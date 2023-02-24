@@ -31,3 +31,8 @@ export const fetchEmission = async (engionType) => {
     const { data } = await $host.get('./data_example/emission.json');
     return Math.round(+data.value * Math.random());
 };
+
+/* запрос вернет ответ есть ли для этих портов nsr путь */
+export const fetchIsNsrRoute = async (portFrom, portTo) => {
+    return Math.random() > 0.5;
+};

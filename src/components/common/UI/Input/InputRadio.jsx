@@ -5,14 +5,14 @@ import '../ui.css';
 
 const InputRadio = ({
     label,
-    chouses,
+    choices,
     inputRadioRef,
     indexDefaultChecked,
     onChange,
     ...props
 }) => {
     const [checkedValue, setCheckedValue] = useState(
-        chouses[indexDefaultChecked].value
+        choices[indexDefaultChecked].value
     );
 
     const handlerChange = (event) => {
@@ -31,18 +31,18 @@ const InputRadio = ({
                 className={classes.input_radio__container}
                 ref={inputRadioRef}
                 onChange={handlerChange}
-                data-value={chouses[indexDefaultChecked].value}
+                data-value={choices[indexDefaultChecked].value}
             >
-                {chouses.map((chouse, index) => (
+                {choices.map((choice, index) => (
                     <Input
-                        defaultChecked={index == +indexDefaultChecked}
+                        defaultChecked={index === +indexDefaultChecked}
                         key={index}
                         type='radio'
                         name={props.name ? props.name : label}
                         labelClassName={
-                            checkedValue == chouse.value ? classes.checked : ''
+                            checkedValue === choice.value ? classes.checked : ''
                         }
-                        {...chouse}
+                        {...choice}
                     />
                 ))}
             </div>

@@ -1,21 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { fetchDistance, fetchEmission, fetchPorts } from '../../../API/portsAPI';
+import React, {useState, useEffect, useRef} from 'react';
+import {
+    fetchDistance,
+    fetchEmission,
+    fetchIsNsrRoute,
+    fetchPorts,
+} from '../../../API/portsAPI';
 import Form from '../../../components/common/UI/Form/Form';
 import Input from '../../../components/common/UI/Input/Input';
 import InputRadio from '../../../components/common/UI/Input/InputRadio';
 import Select from '../../../components/common/UI/Select';
 
-const routeChouses = [
-    { label: 'NSR', value: 'nsr' },
-    { label: 'Suez', value: 'suez' },
+const routeAllChoices = [
+    {label: 'Suez', value: 'suez'},
+    {label: 'NSR', value: 'nsr'},
 ];
 
-const engionChouses = [
-    { label: 'Diesel', value: 'diesel' },
-    { label: 'DFDE', value: 'dfde' },
+const routeDefaultChoices = [{label: 'Suez', value: 'suez'}];
+
+const engionChoices = [
+    {label: 'Diesel', value: 'diesel'},
+    {label: 'DFDE', value: 'dfde'},
 ];
 
 const CalculatorForm = (props) => {
+    const [isAllRouteChoices, setIsAllRouteCho] = useState(false);
     const [portsToOptions, setPortsToOptions] = useState([]);
     const [portsFromOptions, setPortsFromOptions] = useState([]);
 
@@ -26,12 +34,17 @@ const CalculatorForm = (props) => {
     const engionType = useRef(null);
     const emission = useRef(null);
 
-    const updateDistance = () => {
+    const getCurrentPorts = () => {
         const portToValue = portTo.current.value;
         const portFromValue = portFrom.current.value;
+        return [portToValue, portFromValue];
+    };
+
+    const updateDistance = () => {
+        const [port1, port2] = getCurrentPorts();
         const routeValue = route.current.dataset.value;
 
-        fetchDistance(portFromValue, portToValue, routeValue).then(
+        fetchDistance(port1, port2, routeValue).then(
             (data) => (distance.current.value = data)
         );
     };
@@ -44,24 +57,35 @@ const CalculatorForm = (props) => {
         );
     };
 
+    const updateRouteChoices = ([port1, port2]) => {
+        fetchIsNsrRoute(port1, port2).then((data) => setIsAllRouteCho(data));
+    };
+
+    const handlerSelectPort = () => {
+        updateDistance();
+        updateRouteChoices(getCurrentPorts());
+    };
+
     useEffect(() => {
         fetchPorts().then((data) => {
             const portsToOptions = data.map(
                 (obj) => `${obj.country}, ${obj.name}`
             );
 
-            const portsFromOptios = ['Russia, Ust-Luga '];
+            const portsFromOptions = ['Russia, Ust-Luga '];
 
             setPortsToOptions(portsToOptions);
-            setPortsFromOptions(portsFromOptios);
+            setPortsFromOptions(portsFromOptions);
 
             updateDistance();
             updateEmission();
         });
-    }, []);
+    },[]);
 
     const handlerSubmit = (event) => {
         event.preventDefault();
+        const data = new FormData(event.target);
+        console.table(Object.fromEntries(data.entries()));
     };
 
     return (
@@ -70,19 +94,21 @@ const CalculatorForm = (props) => {
                 selectRef={portFrom}
                 label='From'
                 options={portsFromOptions}
-                onChange={updateDistance}
+                onChange={handlerSelectPort}
             />
             <Select
                 selectRef={portTo}
                 label='To'
                 options={portsToOptions}
-                onChange={updateDistance}
+                onChange={handlerSelectPort}
             />
             <InputRadio
                 inputRadioRef={route}
                 label='Route'
-                chouses={routeChouses}
-                indexDefaultChecked='1'
+                choices={
+                    isAllRouteChoices ? routeAllChoices : routeDefaultChoices
+                }
+                indexDefaultChecked='0'
                 onChange={updateDistance}
             />
             <Input
@@ -91,11 +117,11 @@ const CalculatorForm = (props) => {
                 unit='Nmi'
                 defaultValue='0'
             />
-            <Input label='Volume' unit='m3 LNG' />
+            <Input label='Volume' unit='m3 LNG'/>
             <InputRadio
                 inputRadioRef={engionType}
                 label='Engion type'
-                chouses={engionChouses}
+                choices={engionChoices}
                 indexDefaultChecked='0'
                 onChange={updateEmission}
             />
