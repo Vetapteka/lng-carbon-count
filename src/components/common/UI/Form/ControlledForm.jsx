@@ -10,7 +10,7 @@ const ControlledForm = ({ formManager, ...props }) => {
         formManager.fetchValues().then((data) => setValues(data));
     }, []);
 
-    const handleSubmit = (index, event) => {
+    const handleChanged = (index, event) => {
         const newValues = [...values];
         newValues[index] = event.target.value;
         setValues(newValues);
@@ -22,7 +22,7 @@ const ControlledForm = ({ formManager, ...props }) => {
                 createUIComponent({
                     item: item,
                     value: values[index],
-                    onChange: handleSubmit.bind(this, index),
+                    onChange: handleChanged.bind(this, index),
                 })
             )}
         </Form>
