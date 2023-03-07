@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/lng-carbon-count/static/css/main.14d451cf.css",
-    "main.js": "/lng-carbon-count/static/js/main.2b6647c8.js",
+    "main.css": "/lng-carbon-count/static/css/main.97d72437.css",
+    "main.js": "/lng-carbon-count/static/js/main.b9f003d8.js",
     "static/media/authIcon.svg": "/lng-carbon-count/static/media/authIcon.ccfe68052b2b27a1ea6d61742b134d10.svg",
     "static/media/downloadIcon.svg": "/lng-carbon-count/static/media/downloadIcon.6770253d8efe76a4bf676838984a9deb.svg",
     "index.html": "/lng-carbon-count/index.html",
-    "main.14d451cf.css.map": "/lng-carbon-count/static/css/main.14d451cf.css.map",
-    "main.2b6647c8.js.map": "/lng-carbon-count/static/js/main.2b6647c8.js.map"
+    "main.97d72437.css.map": "/lng-carbon-count/static/css/main.97d72437.css.map",
+    "main.b9f003d8.js.map": "/lng-carbon-count/static/js/main.b9f003d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.14d451cf.css",
-    "static/js/main.2b6647c8.js"
+    "static/css/main.97d72437.css",
+    "static/js/main.b9f003d8.js"
   ]
 }
